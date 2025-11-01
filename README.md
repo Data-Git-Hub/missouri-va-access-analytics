@@ -79,6 +79,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 1.4  | Add count_rows_cols.py; Modify README.md
 - Proj 1.3  | Modify prepare_missouri_data.py, README.md
 - Proj 1.2  | Modify prepare_missouri_data.py, README.md
 - Proj 1.1  | Modify prepare_missouri_data.py, requirements.txt, README.md
@@ -91,3 +92,6 @@ Contributors names and contact info <br>
 - Test 1.0  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
 - Test 1.1  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
 - Test 1.2  | Test prepare_missouri_data.py: TEST-SUCCESS created consult_waits_state_subset.csv.gz
+
+## Commit History (Commits needed to complete Sync due to Internet Connnection Error or other factor)
+- Comm  0.1 |
