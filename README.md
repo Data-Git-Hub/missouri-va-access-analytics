@@ -79,6 +79,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 1.3  | Modify prepare_missouri_data.py, README.md
 - Proj 1.2  | Modify prepare_missouri_data.py, README.md
 - Proj 1.1  | Modify prepare_missouri_data.py, requirements.txt, README.md
 - Proj 1.0  | Add prepare_missouri_data.py; Modify README.md
