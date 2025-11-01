@@ -55,6 +55,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 1.0  | Add prepare_missouri_data.py; Modify README.md
 - Init 0.2  | Modify requirements.txt, README.md
 - Init 0.1  | Add scripts folder, prepare_missouri_data.py, consult_waits_2024_03_25.csv; Modify .gitignore, README.md
 - Init 0.0  | Add data folder, process folder, raw folder, requirements.txt; Modify .gitignore, README.md
