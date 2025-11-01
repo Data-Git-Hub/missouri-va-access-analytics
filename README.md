@@ -39,6 +39,30 @@ missouri-va-access-analytics/
 ### Recommended tooling
 
 
+### Why the Raw Data Folder Is Ignored
+
+The `.gitignore` file contains the following lines:
+
+```bash
+# Never commit full dataset
+data/raw/
+```
+
+These entries ensure that large, original data files stored in the `data/raw/` directory are **not committed to the GitHub repository**.
+
+This rule serves two key purposes:
+
+1. **Repository Size and Performance**  
+   The full dataset can exceed GitHub’s 100 MB per-file limit and significantly slow down cloning and version control operations.  
+   By ignoring this folder, the repository remains lightweight, efficient, and easier to maintain.
+
+2. **Reproducibility and Clean Workflow**  
+   Only the **data preparation scripts** and the **processed Missouri-only dataset** are versioned in Git.  
+   Anyone replicating the project can download the raw dataset separately, place it in the `data/raw/` directory, and run the included preparation script to regenerate the processed data.
+
+In summary, this `.gitignore` rule prevents large or sensitive raw data files from being uploaded to GitHub while maintaining a clean, reproducible, and efficient project workflow.
+
+
 ---
 
 ## Authors
@@ -63,3 +87,4 @@ Contributors names and contact info <br>
 
 ## Test History
 - Test 1.0  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
+- Test 1.1  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
