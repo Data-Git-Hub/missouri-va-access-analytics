@@ -61,4 +61,4 @@ Contributors names and contact info <br>
 - Init 0.0  | Add data folder, process folder, raw folder, requirements.txt; Modify .gitignore, README.md
 
 ## Test History
-
+- Test 1.0  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
