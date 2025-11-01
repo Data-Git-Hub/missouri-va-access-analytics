@@ -4,9 +4,11 @@ A data-driven analysis of Veterans Affairs appointment wait times and care pathw
 
 **Short tagline:**
 
+
 ---
 
 ## Introduction
+
 
 ---
 
@@ -15,11 +17,15 @@ A data-driven analysis of Veterans Affairs appointment wait times and care pathw
 ```text
 missouri-va-access-analytics/
 |   | - data/
-|       | - processed
-|       | - raw
+|       | - processed/  # Missouri-only data exported to Git
+|       | - raw/        # original files (ignored by Git due to file size)
+|           | - consult_waits_2024_03_25.csv
+|   | - scripts/
+|       | - prepare_missouri_data.py
 |   | - .gitgnore
 |   | - README.md
 ```
+
 
 ---
 
@@ -27,11 +33,11 @@ missouri-va-access-analytics/
 
 - **Python:**
 
+
 ---
 
 ### Recommended tooling
 
----
 
 ---
 
@@ -40,11 +46,17 @@ missouri-va-access-analytics/
 Contributors names and contact info <br>
 @github.com/Data-Git-Hub <br>
 
+
+---
+
+## References
+
+
 ---
 
 ## Version History
-
-- P6 Init 0.0  | Add data folder, process folder, raw folder, requirements.txt; Modify .gitignore, README.md
+- Init 0.1  | Add scripts folder, prepare_missouri_data.py, consult_waits_2024_03_25.csv; Modify .gitignore, README.md
+- Init 0.0  | Add data folder, process folder, raw folder, requirements.txt; Modify .gitignore, README.md
 
 ## Test History
 
