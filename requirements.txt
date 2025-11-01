@@ -1,15 +1,25 @@
-# Core
+# ---------- Core ----------
 pandas>=2.2
 polars>=1.8
 numpy>=2.0
 pyarrow>=17.0
 python-dotenv>=1.0
 
-# Viz / Notebooks
+# ---------- Visualization / Notebooks ----------
 matplotlib>=3.9
 jupyterlab>=4.2
 ipykernel>=6.29
 
-# CLI & Utils
+# ---------- CLI & Utilities ----------
 rich>=13.8
 tqdm>=4.66
+
+# ---------- Data Processing & File I/O ----------
+# Enables Parquet and robust CSV handling
+fastparquet>=2024.5.0          # optional fallback engine for Parquet
+openpyxl>=3.1.5                # optional Excel I/O support
+xlrd>=2.0.1                    # optional legacy Excel read support
+
+# ---------- Development Tools ----------
+black>=24.4.2                  # optional code formatter
+ruff>=0.5.0                    # optional linter / static analysis
