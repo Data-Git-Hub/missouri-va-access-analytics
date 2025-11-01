@@ -1,0 +1,15 @@
+# Core
+pandas>=2.2
+polars>=1.8
+numpy>=2.0
+pyarrow>=17.0
+python-dotenv>=1.0
+
+# Viz / Notebooks
+matplotlib>=3.9
+jupyterlab>=4.2
+ipykernel>=6.29
+
+# CLI & Utils
+rich>=13.8
+tqdm>=4.66
