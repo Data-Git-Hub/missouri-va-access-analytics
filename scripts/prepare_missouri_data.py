@@ -66,37 +66,21 @@ def read_header_columns(csv_path: Path) -> List[str]:
     return df0.columns.tolist()
 
 
-def make_reader(
-    csv_path: Path,
-    chunksize: int,
-    zip_col_name: str = "zip",
-    dt_col_name: str = "activitydatetime",
-) -> Iterable[pd.DataFrame]:
-    cols = read_header_columns(csv_path)
-    converters = {}
-    parse_dates: List[str] = []
-
-    if zip_col_name in cols:
-        converters[zip_col_name] = str  # preserve leading zeros
-
-    if dt_col_name in cols:
-        parse_dates = [dt_col_name]
-
-    # Tolerant reader
+def make_reader(csv_path: str, chunksize: int | None = None):
     reader = pd.read_csv(
         csv_path,
         chunksize=chunksize,
-        engine="python",          # tolerant with irregular rows
-        on_bad_lines="skip",      # skip malformed lines (wrong field count)
+        engine="python",          # tolerant with ragged rows
         sep=",",
         quotechar='"',
-        low_memory=False,
-        converters=converters if converters else None,
-        parse_dates=parse_dates if parse_dates else None,
-        infer_datetime_format=True,
-        keep_default_na=True,
+        on_bad_lines="skip",      # skip malformed rows instead of crashing
+        parse_dates=["activitydatetime"],  # adjust if different
+        dayfirst=False,
+        dtype_backend="pyarrow",  # optional: lighter memory, since you have pyarrow
+        keep_default_na=True
     )
     return reader
+
 
 
 def normalize_state(series: pd.Series) -> pd.Series:
