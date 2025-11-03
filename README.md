@@ -79,6 +79,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 2.0  | Add cleaned folder to data folder; Modify README.md
 - Proj 1.4  | Add count_rows_cols.py; Modify README.md
 - Proj 1.3  | Modify prepare_missouri_data.py, README.md
 - Proj 1.2  | Modify prepare_missouri_data.py, README.md
