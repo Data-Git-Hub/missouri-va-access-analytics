@@ -15,8 +15,6 @@ rich>=13.8
 tqdm>=4.66
 
 # ---------- Data Processing & File I/O ----------
-# Enables Parquet and robust CSV handling
-fastparquet>=2024.5.0          # optional fallback engine for Parquet
 openpyxl>=3.1.5                # optional Excel I/O support
 xlrd>=2.0.1                    # optional legacy Excel read support
 
