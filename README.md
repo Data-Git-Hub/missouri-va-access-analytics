@@ -31,6 +31,7 @@ missouri-va-access-analytics/
 |   | - .gitgnore
 |   | - README.md
 |   | - requirements.txt
+|   | - va_mo_waits.ipynb
 ```
 
 
@@ -86,6 +87,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 4.0  | Add va_mo_waits.ipynb; Modify README.md
 - Proj 3.3  | Modify README.md
 - Proj 3.2  | Add cleaning_summary.csv; Modify clean_mo_waits.py; README.md
 - Proj 3.1  | Delete placeholder file text.txt from cleaned folder; Modify README.md
