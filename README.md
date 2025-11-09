@@ -94,6 +94,7 @@ Contributors names and contact info <br>
 - Test 1.0  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
 - Test 1.1  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
 - Test 1.2  | Test prepare_missouri_data.py: TEST-SUCCESS created consult_waits_state_subset.csv.gz
+- Test 2.0  | Test clean_mo_waits.py: TEST-SUCCESS created mo_wait_clean.csv.gz
 
 ## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
 - Comm  0.1 |
