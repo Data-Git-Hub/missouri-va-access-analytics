@@ -79,6 +79,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 3.0  | Add clean_mo_waits.py; Modify README.md
 - Proj 2.0  | Add cleaned folder to data folder; Modify README.md
 - Proj 1.4  | Add count_rows_cols.py; Modify README.md
 - Proj 1.3  | Modify prepare_missouri_data.py, README.md
@@ -94,5 +95,5 @@ Contributors names and contact info <br>
 - Test 1.1  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
 - Test 1.2  | Test prepare_missouri_data.py: TEST-SUCCESS created consult_waits_state_subset.csv.gz
 
-## Commit History (Commits needed to complete Sync due to Internet Connnection Error or other factor)
+## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
 - Comm  0.1 |
