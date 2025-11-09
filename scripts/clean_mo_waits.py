@@ -2,6 +2,7 @@
 """
 Clean Missouri VA/community-care wait-time data and emit:
   - data/cleaned/cleaned_mo_waits.csv.gz
+  - data/cleaned/cleaned_mo_waits.parquet
   - data/cleaned/cleaning_summary.csv
 """
 
@@ -26,6 +27,7 @@ DEFAULT_INPUTS = [
 ]
 
 DEFAULT_OUTPUT = DATA_CLEANED / "cleaned_mo_waits.csv.gz"
+PARQUET_OUTPUT = DATA_CLEANED / "cleaned_mo_waits.parquet"
 SPECIALTY_MAP = DATA_REF / "stopcode_specialty_map.csv"
 
 STATE_FULL_NAME = {
@@ -62,7 +64,6 @@ def load_input(path_arg: str | None) -> Path:
     raise FileNotFoundError(
         "Could not find input file. Searched:\n  - "
         + "\n  - ".join(str(x) for x in DEFAULT_INPUTS)
-        + "\nPass --input to specify a file."
     )
 
 def parse_dates(df: pd.DataFrame) -> pd.DataFrame:
@@ -143,26 +144,28 @@ def load_specialty_map() -> pd.DataFrame | None:
     return None
 
 def derive_fields(df: pd.DataFrame, spec_map: pd.DataFrame | None) -> pd.DataFrame:
+    # care setting
     df["care_setting"] = np.where(df.get("non_va", 0) == 1, "Community", "VA")
+    # zip3
     if "zip" in df.columns:
         z = df["zip"].astype("Int64")
         df["veteran_zip3"] = (z // 100).astype("Int64")
     else:
         df["veteran_zip3"] = pd.NA
-
+    # wait_days
     if "dtot" in df.columns:
         df["wait_days"] = pd.to_numeric(df["dtot"], errors="coerce")
     elif all(c in df.columns for c in ["dta", "dtc"]):
         df["wait_days"] = (df["dtc"] - df["dta"]).dt.days
     else:
         df["wait_days"] = pd.NA
-
+    # specialty_category
     df["specialty_category"] = "unknown"
     if spec_map is not None and "stopcode" in df.columns:
         df = df.merge(spec_map, on="stopcode", how="left", suffixes=("", "_mapped"))
         df["specialty_category"] = df["specialty_category_mapped"].fillna(df["specialty_category"])
         df = df.drop(columns=["specialty_category_mapped"])
-
+    # threshold flag
     def threshold(row) -> int | pd.NA:
         wd = row["wait_days"]
         if pd.isna(wd):
@@ -171,14 +174,23 @@ def derive_fields(df: pd.DataFrame, spec_map: pd.DataFrame | None) -> pd.DataFra
         if cat in {"primary", "mental_health"}:
             return int(wd <= 20)
         return int(wd <= 28)
-
     df["met_access_standard"] = df.apply(threshold, axis=1)
     return df
 
 def save_csv(df: pd.DataFrame, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(path, index=False, compression="infer")
-    log(f"Wrote: {path}  ({len(df)} rows, {df.shape[1]} cols)")
+    log(f"Wrote CSV: {path}  ({len(df)} rows, {df.shape[1]} cols)")
+
+def save_parquet(df: pd.DataFrame, path: Path) -> None:
+    """Write Parquet using pyarrow if available; warn otherwise."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        import pyarrow  # noqa: F401
+        df.to_parquet(path, engine="pyarrow", index=False)
+        log(f"Wrote Parquet: {path}  ({len(df)} rows, {df.shape[1]} cols)")
+    except Exception as e:
+        warn(f"Parquet write skipped (pyarrow not available or failed): {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Clean Missouri wait-time data.")
@@ -234,7 +246,7 @@ def main():
     else:
         log("Skipping de-duplication (--no-dedup).")
 
-    # Derive fields and save
+    # Derive fields
     spec_map = load_specialty_map()
     if spec_map is None:
         log("No specialty map found; 'specialty_category' remains 'unknown' (28-day threshold) unless provided.")
@@ -243,8 +255,17 @@ def main():
     # ALWAYS write outputs (even if 0 rows) so artifacts exist
     DATA_CLEANED.mkdir(parents=True, exist_ok=True)
     save_csv(df, outp)
+    save_parquet(df, PARQUET_OUTPUT)
+
+    # Post-write verification for Parquet
+    try:
+        df_check = pd.read_parquet(PARQUET_OUTPUT, engine="pyarrow")
+        log(f"Verified Parquet read: {PARQUET_OUTPUT} -> shape {df_check.shape}")
+    except Exception as e:
+        warn(f"Parquet read-back verification failed (ok to ignore if pyarrow is missing): {e}")
 
     # Summary CSV for Overleaf
+    # NOTE: We keep the “after filter (pre-dedup)” accounting used in your report:
     after_filter_before_dedup = after_window + removed_dups
     summary_rows = [
         {"Metric": "Records (raw Missouri subset)", "Count": n_raw_rows},

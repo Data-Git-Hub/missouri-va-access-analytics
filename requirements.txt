@@ -1,7 +1,7 @@
 # ---------- Core ----------
 pandas>=2.2
 polars>=1.8
-numpy>=2.0
+numpy
 pyarrow>=17.0
 python-dotenv>=1.0
 
