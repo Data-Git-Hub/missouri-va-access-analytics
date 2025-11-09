@@ -17,13 +17,20 @@ A data-driven analysis of Veterans Affairs appointment wait times and care pathw
 ```text
 missouri-va-access-analytics/
 |   | - data/
+|       | - cleaned
+|           | - cleaned_mo_waits.csv.gz
+|           | - cleaning_summary.csv
 |       | - processed/  # Missouri-only data exported to Git
+|           | - consult_waits_state_subset.csv.gz
 |       | - raw/        # original files (ignored by Git due to file size)
 |           | - consult_waits_2024_03_25.csv
 |   | - scripts/
+|       | - clean_mo_waits.py
+|       | - count_rows_cols.py
 |       | - prepare_missouri_data.py
 |   | - .gitgnore
 |   | - README.md
+|   | - requirements.txt
 ```
 
 
@@ -79,6 +86,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 3.3  | Modify README.md
 - Proj 3.2  | Add cleaning_summary.csv; Modify clean_mo_waits.py; README.md
 - Proj 3.1  | Delete placeholder file text.txt from cleaned folder; Modify README.md
 - Proj 3.0  | Add clean_mo_waits.py; Modify README.md
