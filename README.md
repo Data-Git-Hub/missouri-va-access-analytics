@@ -79,6 +79,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 3.1  | Delete placeholder file text.txt from cleaned folder; Modify README.md
 - Proj 3.0  | Add clean_mo_waits.py; Modify README.md
 - Proj 2.0  | Add cleaned folder to data folder; Modify README.md
 - Proj 1.4  | Add count_rows_cols.py; Modify README.md
@@ -94,7 +95,7 @@ Contributors names and contact info <br>
 - Test 1.0  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
 - Test 1.1  | Test prepare_missouri_data.py: TEST-FAIL script did not process consult_waits_2024_03_25.csv
 - Test 1.2  | Test prepare_missouri_data.py: TEST-SUCCESS created consult_waits_state_subset.csv.gz
-- Test 2.0  | Test clean_mo_waits.py: TEST-SUCCESS created mo_wait_clean.csv.gz
+- Test 2.0  | Test clean_mo_waits.py: TEST-FAIL created mo_wait_clean.csv.gz
 
 ## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
-- Comm  0.1 |
+- Comm  0.1 | Commit retire due to connection error
