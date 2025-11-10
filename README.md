@@ -17,18 +17,30 @@ A data-driven analysis of Veterans Affairs appointment wait times and care pathw
 ```text
 missouri-va-access-analytics/
 |   | - data/
-|       | - cleaned
-|           | - cleaned_mo_waits.csv.gz
-|           | - cleaning_summary.csv
-|       | - processed/  # Missouri-only data exported to Git
-|           | - consult_waits_state_subset.csv.gz
-|       | - raw/        # original files (ignored by Git due to file size)
-|           | - consult_waits_2024_03_25.csv
-|   | - scripts/
-|       | - clean_mo_waits.py
-|       | - count_rows_cols.py
-|       | - prepare_missouri_data.py
+|      | - cleaned
+|          | - cleaned_mo_waits.csv.gz
+|          | - cleaning_summary.csv
+|      | - metadata
+|          | - eda_compliance_by_setting.csv
+|          | - eda_group_stats_setting_specialty.csv
+|          | - eda_numeric_summary.csv
+|          | - figures_manifest.csv
+|      | - processed/  # Missouri-only data exported to Git
+|          | - consult_waits_state_subset.csv.gz
+|      | - raw/        # original files (ignored by Git due to file size)
+|          | - consult_waits_2024_03_25.csv
+|      | - figures \ eda
+|          | - correlation_matrix.png
+|          | - trend_median_wait_by_year_Community.png
+|          | - trend_median_wait_by_year_VA.png
+|          | - wait_days_by_setting_box.png
+|          | - wait_days_hist.png
+|      | - scripts/
+|          | - clean_mo_waits.py
+|          | - count_rows_cols.py
+|          | - prepare_missouri_data.py
 |   | - .gitgnore
+|   | - LICENSE
 |   | - README.md
 |   | - requirements.txt
 |   | - va_mo_waits.ipynb
@@ -40,7 +52,55 @@ missouri-va-access-analytics/
 ## Requirements
 
 - **Python:**
+  
 
+---
+
+## Quick Start
+
+## 1) Create, Activate, and Install Dependencies for .venv
+
+Windows
+```shell
+# Navigate to the project root
+cd C:\Projects\missouri-va-access-analytics
+
+# Create a new virtual environment
+python -m venv .venv
+
+# Activate the virtual environment
+.\.venv\Scripts\Activate
+
+# Upgrade pip (recommended)
+python -m pip install --upgrade pip
+
+# Install required dependencies
+pip install -r requirements.txt
+
+# (Optional) Register .venv as a Jupyter kernel
+python -m ipykernel install --user --name missouri-va-venv --display-name "Python 3.11 – MO VA (.venv)"
+```
+
+macOS/Linux
+```bash
+# Navigate to the project root
+cd ~/Projects/missouri-va-access-analytics
+
+# Create a new virtual environment
+python3 -m venv .venv
+
+# Activate the virtual environment
+source .venv/bin/activate
+
+# Upgrade pip (recommended)
+python -m pip install --upgrade pip
+
+# Install required dependencies
+pip install -r requirements.txt
+
+# (Optional) Register .venv as a Jupyter kernel
+python -m ipykernel install --user --name missouri-va-venv --display-name "Python 3.11 – MO VA (.venv)"
+```
 
 ---
 
@@ -87,6 +147,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 4.4  | Modify README.md
 - Proj 4.3  | Add metadata folder, figures folder, eda folder;Modify README.md
 - Proj 4.2  | Modify va_mo_waits.ipynb, README.md
 - Proj 4.1  | Add cleaned_mo_waits.parquet; Modify clean_mo_waits.py; README.md
