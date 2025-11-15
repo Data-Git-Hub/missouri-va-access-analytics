@@ -31,10 +31,13 @@ missouri-va-access-analytics/
 |          | - consult_waits_2024_03_25.csv
 |      | - figures \ eda
 |          | - correlation_matrix.png
-|          | - trend_median_wait_by_year_Community.png
-|          | - trend_median_wait_by_year_VA.png
-|          | - wait_days_by_setting_box.png
-|          | - wait_days_hist.png
+|          | - eda_access_by_setting_bar.png
+|          | - eda_waitdays_box_by_setting.png
+|          | - eda_waitdays_hist.png
+|          | - missing_heatmap.png
+|          | - missing_matrix.png
+|          | - trend_median_wait_by_year_community.png
+|          | - trend_median_wait_by_year_va.png
 |      | - scripts/
 |          | - clean_mo_waits.py
 |          | - count_rows_cols.py
@@ -147,6 +150,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 4.6  | Modify va_mo_waits.ipynb, README.md - Easier use for LaTex
 - Proj 4.5  | Modify va_mo_waits.ipynb, README.md
 - Proj 4.4  | Modify README.md
 - Proj 4.3  | Add metadata folder, figures folder, eda folder;Modify README.md

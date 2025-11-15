@@ -7,6 +7,9 @@ python-dotenv>=1.0
 
 # ---------- Visualization / Notebooks ----------
 matplotlib>=3.9
+seaborn>=0.13           # optional but recommended
+missingno>=0.5.2        # optional
+
 jupyterlab>=4.2
 ipykernel>=6.29
 

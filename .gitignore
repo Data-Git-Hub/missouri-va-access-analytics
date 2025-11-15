@@ -209,3 +209,7 @@ __marimo__/
 
 # Never commit full dataset
 data/raw/
+
+- build/
++ build/
++ !build/*.tex

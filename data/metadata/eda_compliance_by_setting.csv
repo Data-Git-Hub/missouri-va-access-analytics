@@ -1,5 +1,3 @@
-,mean,count
-,met_access_standard,met_access_standard
-care_setting,,
-Community,0.5211486915116883,398819
-VA,0.5827808860202621,788763
+care_setting,share_met,n,share_met_pct
+Community,0.5211486915116883,398819,52.11486915116883
+VA,0.5827808860202621,788763,58.278088602026216
