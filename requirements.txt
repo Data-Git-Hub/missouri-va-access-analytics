@@ -4,6 +4,7 @@ polars>=1.8
 numpy
 pyarrow>=17.0
 python-dotenv>=1.0
+scikit-learn>=1.5       # NEW: for ML models
 
 # ---------- Visualization / Notebooks ----------
 matplotlib>=3.9

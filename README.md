@@ -25,6 +25,7 @@ missouri-va-access-analytics/
 |          | - eda_group_stats_setting_specialty.csv
 |          | - eda_numeric_summary.csv
 |          | - figures_manifest.csv
+|          | - ml_model_metrics_summary.csv
 |      | - processed/  # Missouri-only data exported to Git
 |          | - consult_waits_state_subset.csv.gz
 |      | - raw/        # original files (ignored by Git due to file size)
@@ -38,9 +39,11 @@ missouri-va-access-analytics/
 |          | - missing_matrix.png
 |          | - trend_median_wait_by_year_community.png
 |          | - trend_median_wait_by_year_va.png
+|      | - mech_diag.png
 |      | - scripts/
 |          | - clean_mo_waits.py
 |          | - count_rows_cols.py
+|          | - generate_mechanism_diagram.py
 |          | - prepare_missouri_data.py
 |   | - .gitgnore
 |   | - LICENSE
@@ -150,6 +153,8 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 5.1  | Modify va_mo_waits.ipynb, README.md
+- Proj 5.0  | Modify va_mo_waits.ipynb, requirements.txt, README.md
 - Proj 4.6  | Modify va_mo_waits.ipynb, README.md - Easier use for LaTex
 - Proj 4.5  | Modify va_mo_waits.ipynb, README.md
 - Proj 4.4  | Modify README.md
@@ -177,7 +182,7 @@ Contributors names and contact info <br>
 - Test 1.2  | Test prepare_missouri_data.py: TEST-SUCCESS created consult_waits_state_subset.csv.gz
 - Test 2.0  | Test clean_mo_waits.py: TEST-FAIL created mo_wait_clean.csv.gz with 1kb of information
 - Test 2.1  | Test clean_mo_waits.py: TEST-SUCCESS created mo_wait_clean.csv.gz, cleaning_summary.csv
-- Test 3.0  | Test va_mo_waits.ipynb: TEST-SECCESS created readable .png files for LaTex
+- Test 3.0  | Test va_mo_waits.ipynb: TEST-SUCCESS created readable .png files for LaTex
 
 ## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
 - Comm  0.1 | Commit retire due to connection error
