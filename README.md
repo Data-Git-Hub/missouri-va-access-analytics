@@ -26,19 +26,26 @@ missouri-va-access-analytics/
 |          | - eda_numeric_summary.csv
 |          | - figures_manifest.csv
 |          | - ml_model_metrics_summary.csv
+|          | - ml_rf_feature_importances.csv
 |      | - processed/  # Missouri-only data exported to Git
 |          | - consult_waits_state_subset.csv.gz
 |      | - raw/        # original files (ignored by Git due to file size)
 |          | - consult_waits_2024_03_25.csv
-|      | - figures \ eda
-|          | - correlation_matrix.png
-|          | - eda_access_by_setting_bar.png
-|          | - eda_waitdays_box_by_setting.png
-|          | - eda_waitdays_hist.png
-|          | - missing_heatmap.png
-|          | - missing_matrix.png
-|          | - trend_median_wait_by_year_community.png
-|          | - trend_median_wait_by_year_va.png
+|      | - figures 
+|          | - eda
+|              | - correlation_matrix.png
+|              | - eda_access_by_setting_bar.png
+|              | - eda_waitdays_box_by_setting.png
+|              | - eda_waitdays_hist.png
+|              | - missing_heatmap.png
+|              | - missing_matrix.png
+|              | - trend_median_wait_by_year_community.png
+|              | - trend_median_wait_by_year_va.png
+|          | - ml
+|              | - ml_confusion_logistic_regression.png
+|              | - ml_confusion_random_forest.png
+|              | - ml_feature_importance_rf_top15.png
+|              | - ml_roc_logreg_vs_rf.png
 |      | - mech_diag.png
 |      | - scripts/
 |          | - clean_mo_waits.py
@@ -153,6 +160,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 5.2  | Modify va_mo_waits.ipynb, README.md
 - Proj 5.1  | Modify va_mo_waits.ipynb, README.md
 - Proj 5.0  | Modify va_mo_waits.ipynb, requirements.txt, README.md
 - Proj 4.6  | Modify va_mo_waits.ipynb, README.md - Easier use for LaTex
