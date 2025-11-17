@@ -10,6 +10,44 @@ A data-driven analysis of Veterans Affairs appointment wait times and care pathw
 ## Introduction
 
 
+--
+
+## Machine Learning Model Results
+
+<h3 align="center">Figure 1 — ROC Curves</h3>
+<p align="center">
+  <img src="figures/ml/ml_roc_logreg_vs_rf.png" width="600">
+</p>
+<p align="center">
+  <em>ROC curves for logistic regression and random forest models predicting access-standard
+  attainment. The random forest model achieves a higher AUC on the held-out test set, indicating
+  better discriminatory performance between timely and delayed appointments.</em>
+</p>
+
+---
+
+<h3 align="center">Figure 2 — Logistic Regression Confusion Matrix</h3>
+<p align="center">
+  <img src="figures/ml/ml_confusion_logistic_regression.png" width="450">
+</p>
+<p align="center">
+  <em>Normalized confusion matrix for the logistic regression model. Values represent the proportion
+  of true “Met” and “Not Met” appointments classified into each category.</em>
+</p>
+
+---
+
+<h3 align="center">Figure 3 — Random Forest Confusion Matrix</h3>
+<p align="center">
+  <img src="figures/ml/ml_confusion_random_forest.png" width="450">
+</p>
+<p align="center">
+  <em>Normalized confusion matrix for the random forest model. Compared to logistic regression,
+  the ensemble model improves sensitivity for appointments that meet the access standard while
+  maintaining similar specificity.</em>
+</p>
+
+
 ---
 
 ## Project Structure
@@ -160,6 +198,7 @@ Contributors names and contact info <br>
 ---
 
 ## Version History
+- Proj 6.0  | Modify README.md
 - Proj 5.2  | Modify va_mo_waits.ipynb, README.md
 - Proj 5.1  | Modify va_mo_waits.ipynb, README.md
 - Proj 5.0  | Modify va_mo_waits.ipynb, requirements.txt, README.md
