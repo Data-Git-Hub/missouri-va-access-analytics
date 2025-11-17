@@ -18,7 +18,7 @@ This project analyzes Missouri appointment wait times using the publicly availab
 The predictive modeling pipeline uses logistic regression and random forest classifiers to evaluate how care setting, specialty category, facility code (STA3N), calendar year, and veteran geography influence the likelihood of meeting the access standard. The goal is to create a reproducible, scalable analytic framework that can be extended to other states and integrated with escalation-channel outcomes (e.g., Patient Advocate, White House VA Hotline, congressional casework) in future work. The results provide operational insights relevant to transparency, accountability, and performance improvement across the VA healthcare system.
 
 
---
+---
 
 ## Machine Learning Model Results
 
@@ -254,5 +254,6 @@ Department of Veterans Affairs. (2019). *Veterans Community Care Program*, 38 C.
 
 ## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
 - Comm  0.1 | Commit retire due to connection error
+- Comm  0.2 | Commit retire due to connection error
 
 
