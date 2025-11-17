@@ -2,12 +2,20 @@
 
 A data-driven analysis of Veterans Affairs appointment wait times and care pathways, including VA vs. community performance metrics, filtering Missouri facilities from 2014–2025 to build an evidence-based decision-support model.
 
+
 **Short tagline:**
+> A data-driven evaluation of how quickly Missouri veterans receive care — and which factors most strongly predict timely access within the VA and Community Care systems.
 
 
 ---
 
 ## Introduction
+
+Timely access to healthcare remains one of the most critical challenges facing the United States Department of Veterans Affairs (VA). Multiple federal reviews have documented persistent delays in scheduling, processing, and completing care, especially in specialty services (U.S. Government Accountability Office [GAO], 2023; Department of Veterans Affairs Office of Inspector General [VA OIG], 2024). In response to long-standing access problems, major federal legislation—including the Veterans Access, Choice, and Accountability Act of 2014 (VACAA) and the VA MISSION Act of 2018, expanded the use of community providers to improve appointment timeliness and reduce operational bottlenecks (United States, 2014; United States, 2018).
+
+This project analyzes Missouri appointment wait times using the publicly available Griffith (2024) dataset to identify measurable differences between VA facility care and Community Care, quantify specialty-level delays, and evaluate historical trends following federal policy interventions. In addition to exploratory data analysis (EDA), the project implements a supervised machine learning (ML) workflow to predict whether an appointment meets the federal access standard—defined as completion within established timelines determined by specialty category.
+
+The predictive modeling pipeline uses logistic regression and random forest classifiers to evaluate how care setting, specialty category, facility code (STA3N), calendar year, and veteran geography influence the likelihood of meeting the access standard. The goal is to create a reproducible, scalable analytic framework that can be extended to other states and integrated with escalation-channel outcomes (e.g., Patient Advocate, White House VA Hotline, congressional casework) in future work. The results provide operational insights relevant to transparency, accountability, and performance improvement across the VA healthcare system.
 
 
 --
@@ -194,10 +202,23 @@ Contributors names and contact info <br>
 
 ## References
 
+Department of Veterans Affairs, Office of Inspector General. (2024). *Delays in community care consult processing and scheduling at the Martinsburg VA Medical Center in West Virginia* (Report No. 23-02020-85). https://www.vaoig.gov/
+
+Griffith, K. (2024). *Appointment Wait Times for Primary and Specialty Care in Veterans Health Administration Facilities vs. Community Medical Centers* (Version 16) [Dataset]. Mendeley Data. https://doi.org/10.17632/rmk89k4rhb.16
+
+U.S. Government Accountability Office. (2023). *Veterans health care: VA actions needed to ensure timely scheduling of specialty care appointments* (GAO-23-105617). https://www.gao.gov/
+
+United States. (2014). *Veterans Access, Choice, and Accountability Act of 2014*, Pub. L. No. 113–146. https://www.govinfo.gov/
+
+United States. (2018). *VA MISSION Act of 2018*, Pub. L. No. 115–182. https://www.congress.gov/
+
+Department of Veterans Affairs. (2019). *Veterans Community Care Program*, 38 C.F.R. §§ 17.4000–17.4040. https://www.ecfr.gov/
+
 
 ---
 
 ## Version History
+- Proj 6.1  | Modify README.md
 - Proj 6.0  | Modify README.md
 - Proj 5.2  | Modify va_mo_waits.ipynb, README.md
 - Proj 5.1  | Modify va_mo_waits.ipynb, README.md
@@ -233,3 +254,5 @@ Contributors names and contact info <br>
 
 ## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
 - Comm  0.1 | Commit retire due to connection error
+
+
