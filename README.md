@@ -251,6 +251,7 @@ Department of Veterans Affairs. (2019). *Veterans Community Care Program*, 38 C.
 - Test 2.0  | Test clean_mo_waits.py: TEST-FAIL created mo_wait_clean.csv.gz with 1kb of information
 - Test 2.1  | Test clean_mo_waits.py: TEST-SUCCESS created mo_wait_clean.csv.gz, cleaning_summary.csv
 - Test 3.0  | Test va_mo_waits.ipynb: TEST-SUCCESS created readable .png files for LaTex
+- Test 6.0  | Test va_mo_waits.ipynb: TEST-SUCCESS
 
 ## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
 - Comm  0.1 | Commit retire due to connection error
