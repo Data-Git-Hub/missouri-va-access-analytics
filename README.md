@@ -254,7 +254,8 @@ Department of Veterans Affairs. (2019). *Veterans Community Care Program*, 38 C.
 - Test 6.0  | Test va_mo_waits.ipynb: TEST-SUCCESS
 
 ## Commit History (Commits needed to complete Sync due to Internet Connection Error or other factor)
-- Comm  0.1 | Commit retire due to connection error
-- Comm  0.2 | Commit retire due to connection error
+- Comm  0.1 | Commit retry due to connection error
+- Comm  0.2 | Commit retry due to connection error
 
-
+## Administrative History
+- Admn  0.1 | Fix minor spelling errors
